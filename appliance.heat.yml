@@ -53,7 +53,7 @@ parameters:
         hidden: true
 
 ###############################################################################
-# Gitops repository
+# Gitops repository (post-configuration)
 
     gitops_repo_url:
         type: string
@@ -80,7 +80,7 @@ parameters:
         #      description: Minimum length is 6
 
 ###############################################################################
-# Gitops repository
+# Git repository (bootstrap)
 
     git_repo_url:
         type: string
@@ -314,6 +314,7 @@ resources:
 
 ###############################################################################
 # Dedicated security group
+# TODO: set custom rules
 
 ###############################################################################
 # Network port
@@ -332,6 +333,7 @@ resources:
 
 ###############################################################################
 # Instance
+
     appliance:
         type: OS::Nova::Server
         properties:
@@ -409,4 +411,5 @@ resources:
 ###############################################################################
 # Outputs
 
+# TODO: do we need outputs?
 #outputs:
