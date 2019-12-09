@@ -222,12 +222,14 @@ resources:
 
                             apt update
                             apt -y install ansible git python3-netaddr python3-openstackclient python3-heatclient jq
-                            sed -i 's/~/\/root/' /etc/ansible/ansible.cfg
-                            sed -i 's/^#remote_tmp/remote_tmp/' /etc/ansible/ansible.cfg
-                            sed -i 's/^#local_tmp/remote_tmp/' /etc/ansible/ansible.cfg
-                            
                             export SSH_SERVICE=ssh
+                            
                         fi
+
+                        # ENV variable ~ not defined by cloud-init: replaced by /root
+                        sed -i 's/~/\/root/' /etc/ansible/ansible.cfg
+                        sed -i 's/^#remote_tmp/remote_tmp/' /etc/ansible/ansible.cfg
+                        sed -i 's/^#local_tmp/remote_tmp/' /etc/ansible/ansible.cfg
 
                         # DNS: Populate /etc/hosts
                         if [ ! -z "$static_hosts" ] ; then
