@@ -32,7 +32,7 @@ parameters:
 
     os_password:
         type: string
-        description: Openstack username used by the appliance
+        description: Openstack password used by the appliance
         hidden: true
 
     os_auth_url:
@@ -58,7 +58,7 @@ parameters:
     gitops_repo_url:
         type: string
         description: Git repository used for custom post-configuration of the appliance
-        default: https://github.com/139bercy/cloud-appliance-ci-cd
+        default:
 
     gitops_repo_checkout:
         type: string
@@ -144,7 +144,7 @@ parameters:
 
     docker_size_mb:
         type: number
-        description:  Docker data volume size
+        description: Docker data volume size
         default: 10
 
 resources:
